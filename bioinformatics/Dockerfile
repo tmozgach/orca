@@ -1,5 +1,7 @@
 FROM linuxbrew/linuxbrew
-MAINTAINER Shaun Jackman <sjackman@gmail.com>
+MAINTAINER Shaun Jackman <sjackman@gmail.com> Tatyana Mozgacheva <tatyana.mozgacheva@gmail.com>
+
+#https://github.com/bcgsc/orca/issues/2
 
 ENV PERL5LIB /home/linuxbrew/perl5/lib/perl5
 
@@ -12,8 +14,7 @@ RUN gem install gnuplot RubyInline terminal-table narray
 RUN cpanm -i DBD::mysql DB_File forks Perl::Unsafe::Signals Bio::Root::Version IO::All forks::shared Want Bit::Vector DBD::SQLite DBI File::Which IO::Prompt Inline::C PerlIO::gzip XML::Simple
 RUN cpanm -i Module::Build Class::Inspector SOAP::Lite SVG Term::ReadKey Time::HiRes XML::Parser Carp::Clan HTML::Parser LWP URI Inline Inline::C Parse::RecDescent version
 
-#RUN cpanm Bio::Perl
-#RUN brew install bioperl
+RUN cpanm Bio::Perl
 
 RUN brew install python # for pip and setuptools
 RUN brew install python3
@@ -23,22 +24,16 @@ RUN pip install biopython
 RUN brew install libxml2
 RUN pip install python-igraph
 RUN pip install pysam
+RUN pip install htseq pandas pyvcf virtualenv
 
 RUN brew install tcsh
 
-# RUN brew install homebrew/python/HTSeq
 RUN brew install homebrew/science/matplotlib
-# RUN brew install homebrew/python/pandas
-# RUN brew install homebrew/python/pip
-# RUN brew install homebrew/python/pysam
-# RUN brew install homebrew/python/PyVCF
 RUN brew install scipy
-# RUN brew install homebrew/python/virtualenv
-
-
-#Uncomment 3 lines 
+ 
 RUN brew install R
 
+sudo apt-get install zip -y
 RUN brew install unzip
 RUN brew install vim
 
@@ -47,7 +42,19 @@ RUN brew tap homebrew/science
 # test quast
 # RUN brew install quast
 
-RUN cpanm -i HTML::Entities LWP::Simple LWP::Protocol::https  Statistics::Descriptive
+RUN cpanm -i HTML::Entities LWP::Simple LWP::Protocol::https  Statistics::Descriptive Moo
+
+#for bowtie
+RUN cpanm -i Clone Apache::DBI
+
+#for icu4c,
+RUN sudo apt-get install wamerican
+
+#for tommorowTuesday
+#RUN brew install gpatch 
+#RUN brew install garli
+
+RUN brew install miller
 
 RUN brew install \ 
 a5 \
@@ -55,11 +62,10 @@ abacas \
 abyss-explorer \
 abyss \
 ace-corrector \
-adam 
-RUN brew install adapterremoval
-
-RUN brew install afra \
-allpaths-lg \
+adam \
+adapterremoval \
+afra \
+#allpaths-lg \ old, used discovardenovo
 amos \
 andi \
 # RUN brew install anvio
@@ -71,28 +77,6 @@ autoconf \
 automake \
 atram 
 RUN brew install augustus
- 
-#Replace sudo apt with berkeley-db mysql
-#RUN brew install populations
-#put above later for biopieces, sudo apt... for DB_File
-#RUN brew install perl
-#RUN sudo apt-get install libdb6.0-dev libdb6.0
-#RUN cpanm -i DB_File
-#For DBD::mysql
-#RUN sudo apt-get install libmysqlclient-dev --yes
-#RUN cpanm -i DBD::mysql
-#RUN cpanm -i Module::Build Class::Inspector SOAP::Lite SVG Term::ReadKey Time::HiRes XML::Parser Carp::Clan HTML::Parser LWP URI Inline Inline::C Parse::RecDescent version 
-#RUN brew install ruby
-#RUN gem install gnuplot
-#RUN gem install RubyInline
-#RUN gem install terminal-table
-#RUN gem install narray
-# # RUN brew install node
-# # RUN node install bionode -g
-#RUN brew reinstall biopieces
-
-
-#RUN brew install corset
 
 RUN brew install bam-readcount \
 bamhash \
@@ -114,9 +98,8 @@ bioawk \
 biobloomtools \
 biointerchange \
 biomake \
-# bipe \
 bison \
-biopieces \
+# biopieces \ for future, export variables
 blasr \
 blast \
 blat \
@@ -127,15 +110,6 @@ bpipe \
 breseq \
 busco \
 bwa 
-
-#for test
-#RUN pip install biopython
-#RUN brew install gene 
-
-#for test
-#RUN brew install tcsh
-#RUN brew install binutils
-#RUN sudo apt-get install csh
 
 RUN brew install canu \
 cap3 \
@@ -152,6 +126,7 @@ clustal-omega \
 clustal-w \
 cmake \
 curl \
+cufflinks \
 # RUN brew install corset
 cytoscape
 RUN brew install daligner \
@@ -161,15 +136,16 @@ dextractor \
 diamond \
 dida \
 discovar \
-# RUN brew install discovardenovo
+# discovardenovo error =(
 dsk \
 dwgsim
 RUN brew install e-mem \
 edirect \
 emacs \
-# RUN brew install ensembl-tools
-exonerate \
-express
+# RUN brew install ensembl-tools no formulae
+exonerate 
+# express
+
 RUN brew install fasta \
 fastml \
 fastq-tools \
@@ -194,7 +170,7 @@ RUN brew install gatb
 RUN brew install gatk
 RUN brew install geneid
 RUN brew install genewise
-# RUN brew install genometools
+RUN brew install genometools
 
 #no such formulae
 # RUN brew install gfatools
@@ -202,10 +178,10 @@ RUN brew install genewise
 RUN brew install gingr
 RUN brew install glimmerhmm
 RUN brew install gmap-gsnap
-RUN brew install gnuplot
+RUN brew install gnuplot # broke by mummer
 RUN brew install grabix
 RUN brew install graphlan
-RUn brew install gsl
+RUN brew install gsl
 # RUN brew install gubbins
 RUN brew install harfbuzz
 # RUN brew install harvest-tools
@@ -214,7 +190,7 @@ RUN brew install hisat2
 RUN brew install hlaminer
 RUN brew install hmmer
 RUN brew install hmmer2
-# RUN brew install htqc
+#RUN brew install htqc
 RUN brew install htsbox
 RUN brew install htslib
 RUN brew install humann2
@@ -230,10 +206,9 @@ RUN brew install jellyfish-1.1
 RUN brew install jellyfish
 RUN brew install jpeg
 
-#kat and kmerstream works after C-letter formulae 
 RUN brew install kaiju \
 kallisto \
-kat \
+kat \ 
 kent-tools \
 kmacs \
 kmc \
@@ -259,17 +234,17 @@ RUN brew install m4 \
 macse \
 mafft \
 makedepend 
-RUN brew install maker 
-RUN brew install mapsembler2 \
+RUN brew install maker \ 
+mapsembler2 \
 maq \
 mash \
-# RUN brew install masurca
+# RUN brew install masurca orca, new version, https://github.com/Homebrew/homebrew-science/pull/5772
 mcl \
-megahit \
-meme \
-# meraculous \
-# RUN brew install metaphlan
-mhap \
+megahit \ 
+meme 
+# meraculous \ orca
+# RUN brew install metaphlan orca, installed by humann2
+RUN brew install mhap \
 minced \
 minia \
 miniasm \
@@ -277,13 +252,13 @@ minimap \
 mir-prefer \
 # RUN brew install mira
 mitofy \
-# RUN brew install mlst
-# RUN brew install mothur
+mlst \
+mothur \ 
 mrbayes \
 multi-worm-tracker \
-mummer \
+mummer \ 
 muscle 
-# musket 
+# musket no formulae 
 RUN brew install nanopolish \
 # RUN brew install ncbi-c++-toolkit
 ncl \
@@ -298,17 +273,16 @@ RUN brew install oases
 # RUN brew install ogdraw
 RUN brew install oma
 
-#works after C-letter formulae
 RUN brew install orthofinder
-# RUN brew install pagan
+# RUN brew install pagan no formulae
 RUN brew install paml
 RUN brew install pandaseq
 RUN brew install parallel
 RUN brew install parsnp
 RUN brew install pathd8
 RUN brew install pathvisio
-# RUN brew install pbh5tools
-# RUN brew install pbsuite
+# RUN brew install pbh5tools no formulae
+# RUN brew install pbsuite 
 RUN brew install pcre
 RUN brew install pear
 RUN brew install phipack
@@ -322,7 +296,7 @@ RUN brew install piler
 RUN brew install pilercr
 RUN brew install pilon
 RUN brew install pixman
-# RUN brew install platanus
+# RUN brew install platanus no formulae
 RUN brew install plink
 RUN brew install pkg-config
 # RUN brew install plink2
@@ -330,7 +304,7 @@ RUN brew install poa
 # RUN brew install populations
 # RUN brew install poretools
 RUN brew install prodigal
-# RUN brew install prokka
+RUN brew install prokka
 RUN brew install proteinortho
 RUN brew install psmc
 # RUN brew install quaff
@@ -339,8 +313,8 @@ RUN brew install quast
 RUN brew install quest
 RUN brew install quorum
 # RUN brew install r8s
-RUN brew install racon \
-# RUN brew install rampart
+RUN brew install racon 
+RUN brew install rampart \
 rapsearch2 \
 raxml \
 ray \
@@ -357,11 +331,12 @@ rmblast \
 rna-star \
 rnammer \
 ropebwt2
+
 RUN brew install sailfish \
 salmon \
 sambamba \
 samblaster \
-# RUN brew install samtools-0.1
+samtools@0.1 \
 samtools \
 scarpa \
 sdsl-lite \
@@ -376,7 +351,7 @@ skewer \
 smalt \
 # RUN brew install smrtanalysis
 # snap-aligner \ may be exclude
-# RUN brew install snap
+snap \
 snoscan \
 snp-sites \
 snpeff \
@@ -384,14 +359,14 @@ soapdenovo \
 sortmerna \
 spaced \
 spades \
-# sparseassembler \
+# sparseassembler \ no formulae
 spici \
 sqlite \
 squeezambler \
 sratoolkit \
 ssake \
-# sspace \
-# sspace-longread \
+# sspace \ no formulae
+# sspace-longread \ no formulae
 stacks \
 stringtie \
 szip \
@@ -411,19 +386,18 @@ trimal \
 trimmomatic \
 trinity \
 trnascan 
-RUN brew install ucsc-genome-browser
+#RUN brew install ucsc-genome-browser
 RUN brew install uproc
-RUN brew install vague
-RUN brew install varscan
-RUN brew install vcake
-RUN brew install vcflib
-RUN brew install vcftools
-RUN brew install velvet
-RUN brew install velvetoptimiser
-RUN brew install viennarna
-RUN brew install vsearch
-RUN brew install vt
+RUN brew install vague \
+varscan \
+vcake \
+vcflib \
+vcftools \
+velvet \
+velvetoptimiser \
+viennarna \
+vsearch \
+vt 
 RUN brew install weblogo
-#wait wiggletools merging
-#RUN brew install wiggletools
+RUN brew install wiggletools
 RUN brew install yaha
