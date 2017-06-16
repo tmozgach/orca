@@ -110,7 +110,6 @@ bpipe \
 breseq \
 busco \
 bwa 
-
 RUN brew install canu \
 cap3 \
 cd-hit \
