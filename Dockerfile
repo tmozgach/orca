@@ -106,7 +106,7 @@ blat \
 bless \
 bowtie \
 bowtie2 \
-bpipe \
+# bpipe \
 breseq \
 busco \
 bwa 
