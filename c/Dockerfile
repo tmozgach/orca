@@ -1,2 +1,2 @@
-FROM tmozgach/orca/b
+FROM tmozgach/b
 RUN brew install unzip
