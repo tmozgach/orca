@@ -1,3 +1,0 @@
-sut:
-  build: .
-  command: sh -c 'brew tests && (brew test quast || true) && brew test $(brew list) --cc=gcc-4.8'
