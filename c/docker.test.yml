@@ -1,0 +1,3 @@
+sut:
+  build: .
+  command: sh -c 'echo "hello" && brew tests && (brew test quast || true) && brew test $(brew list) --cc=gcc-4.8'
