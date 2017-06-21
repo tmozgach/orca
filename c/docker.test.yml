@@ -1,5 +1,5 @@
 sut:
   build: .
-  command: sh -c '(brew test quast || true) && brew test $(brew list) --cc=gcc-4.8'
+  command: sh -c 'brew test $(brew list) --cc=gcc-4.8'
   environment:
     - HOMEBREW_DEVELOPER=1
