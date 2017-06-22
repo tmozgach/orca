@@ -1,4 +1,4 @@
-FROM tmozgacheva/orca-c
+FROM tmozgacheva/orca
 
 WORKDIR /app
 
