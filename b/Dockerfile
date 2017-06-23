@@ -1,2 +1,4 @@
 FROM tmozgacheva/orca-a
-RUN brew install vim
+RUN brew tap homebrew/science
+RUN brew install homebrew/science/matplotlib
+RUN brew install quast
