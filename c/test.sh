@@ -1,6 +1,6 @@
 sleep 5
 # The bug with `quast`, have to test twice!
-#brew test quast
+brew test quast
 
 if brew test $(brew list) --cc=gcc-4.8 |& grep -q ': failed'; then
   echo "Tests failed!"
