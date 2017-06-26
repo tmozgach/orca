@@ -1,5 +1,5 @@
 FROM tmozgacheva/orca-a
-RUN time brew install \ 
+RUN brew install \ 
 a5 \
 abacas \
 abyss-explorer \
