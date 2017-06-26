@@ -1,4 +1,45 @@
 FROM tmozgacheva/orca-b
+RUN brew install last \
+libbigwig \
+libpll \
+libsequence \
+libtool \
+lighter \
+links-scaffolder \
+lobstr \
+lsd \
+lua \
+lumpy-sv 
+
+RUN brew install m4 \
+macse \
+mafft \
+makedepend 
+RUN brew install maker \ 
+mapsembler2 \
+maq \
+mash \
+# RUN brew install masurca orca, new version, https://github.com/Homebrew/homebrew-science/pull/5772
+mcl \
+megahit \ 
+meme 
+# meraculous \ orca
+# RUN brew install metaphlan orca, installed by humann2
+RUN brew install mhap \
+minced \
+minia \
+miniasm \
+minimap \
+mir-prefer \
+# RUN brew install mira
+mitofy \
+mlst \
+mothur \ 
+mrbayes \
+multi-worm-tracker \
+mummer \ 
+muscle 
+# musket no formulae 
 RUN brew install nanopolish \
 # RUN brew install ncbi-c++-toolkit
 ncl \
