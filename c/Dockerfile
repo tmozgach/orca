@@ -1,4 +1,14 @@
 FROM tmozgacheva/orca-b
+RUN brew install kaiju \
+kallisto \
+kat \ 
+kent-tools \
+kmacs \
+kmc \
+kmergenie \
+kmerstream \
+kollector \
+kraken
 RUN brew install last \
 libbigwig \
 libpll \
