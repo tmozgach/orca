@@ -148,17 +148,3 @@ RUN brew install iva
 RUN brew install jellyfish-1.1
 RUN brew install jellyfish
 RUN brew install jpeg
-
-RUN brew install kaiju \
-kallisto \
-kat \ 
-kent-tools \
-kmacs \
-kmc \
-kmergenie \
-kmerstream \
-kollector \
-kraken
-
-
-
