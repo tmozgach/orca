@@ -21,3 +21,35 @@ automake \
 atram 
 RUN brew install augustus
 
+RUN brew install bam-readcount \
+bamhash \
+bamm \
+bamtools \
+bamutil \
+barrnap \
+bbtools \
+bcalm \
+bcftools \
+beagle \
+beast \
+beast2 \
+bedops \
+bedtools \
+beetl \
+bfc \
+bioawk \
+biobloomtools \
+biointerchange \
+biomake \
+bison \
+# biopieces \ for future, export variables
+blasr \
+blast \
+blat \
+bless \
+bowtie \
+bowtie2 \
+#bpipe \
+breseq \
+busco \
+bwa 
