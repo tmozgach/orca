@@ -115,36 +115,4 @@ RUN brew install geneid
 RUN brew install genewise
 RUN brew install genometools
 
-#no such formulae
-# RUN brew install gfatools
 
-RUN brew install gingr
-RUN brew install glimmerhmm
-RUN brew install gmap-gsnap
-RUN brew install gnuplot # broke by mummer
-RUN brew install grabix
-RUN brew install graphlan
-RUN brew install gsl
-# RUN brew install gubbins
-RUN brew install harfbuzz
-# RUN brew install harvest-tools
-RUN brew install hisat
-RUN brew install hisat2
-RUN brew install hlaminer
-RUN brew install hmmer
-RUN brew install hmmer2
-#RUN brew install htqc
-RUN brew install htsbox
-RUN brew install htslib
-RUN brew install humann2
-RUN brew install icu4c
-RUN brew install idba
-RUN brew install igv
-RUN brew install igvtools
-RUN brew install impute2
-RUN brew install infernal
-RUN brew install iqtree
-RUN brew install iva
-RUN brew install jellyfish-1.1
-RUN brew install jellyfish
-RUN brew install jpeg
