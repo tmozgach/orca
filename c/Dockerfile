@@ -1,5 +1,7 @@
 FROM tmozgacheva/orca-b
+ENV PERL5LIB /home/linuxbrew/perl5/lib/perl5
 
+RUN brew install maker 
 
 RUN brew install canu \
 cap3 \
