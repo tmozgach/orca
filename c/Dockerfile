@@ -1,6 +1,6 @@
-RUN date +"%T"
-FROM tmozgacheva/orca-b
 
+FROM tmozgacheva/orca-b
+RUN echo $(date +"%T")
 RUN brew install canu \
 cap3 \
 cd-hit \
@@ -20,4 +20,4 @@ cufflinks \
 # RUN brew install corset
 cytoscape
 
-RUN date +"%T"
+RUN echo $(date +"%T")
