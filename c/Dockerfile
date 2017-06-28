@@ -35,5 +35,25 @@ emacs \
 # RUN brew install ensembl-tools no formulae
 exonerate 
 # express
+
+RUN brew install fasta \
+fastml \
+fastq-tools \
+fastqc \
+fasttree \
+fastuniq \
+fastx_toolkit \
+fermi-lite \
+fermi \
+fermi2 \
+fermikit \
+flash \
+flex \
+fqzcomp \
+freebayes \
+freec \
+fsa 
+#fwdpp uncomment
+
 RUN brew install maker 
 
