@@ -53,6 +53,19 @@ freebayes \
 freec \
 fsa \
 fwdpp
+
+# Maker doesn't work 0_0
+RUN brew install maker \ 
+mapsembler2 \
+maq \
+mash \
+# RUN brew install masurca orca, new version, https://github.com/Homebrew/homebrew-science/pull/5772
+mcl \
+megahit \ 
+meme 
+# meraculous \ orca
+# RUN brew install metaphlan orca, installed by humann2
+
 RUN brew install gaemr
 # RUN brew install garli
 RUN brew install gatb
@@ -96,16 +109,6 @@ RUN brew install jellyfish
 RUN brew install jpeg
 
 # Maker doesn't work 0_0
-RUN brew install maker \ 
-mapsembler2 \
-maq \
-mash \
-# RUN brew install masurca orca, new version, https://github.com/Homebrew/homebrew-science/pull/5772
-mcl \
-megahit \ 
-meme 
-# meraculous \ orca
-# RUN brew install metaphlan orca, installed by humann2
 
 RUN brew install kaiju \
 kallisto \
