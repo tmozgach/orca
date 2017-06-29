@@ -1,3 +1,4 @@
+FROM tmozgacheva/orca-a
 RUN brew install m4 \
 macse \
 mafft \
