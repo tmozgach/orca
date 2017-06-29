@@ -14,7 +14,7 @@ RUN brew install phlawd
 RUN brew install phylip
 RUN brew install phyml
 RUN brew install phyutility
-RUN brew install phyx
+#RUN brew install phyx
 RUN brew install picard-tools
 RUN brew install piler
 RUN brew install pilercr
