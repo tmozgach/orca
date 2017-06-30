@@ -1,4 +1,4 @@
-FROM tmozgacheva/orca-a
+FROM tmozgacheva/orca-d
 RUN brew install paml
 RUN brew install pandaseq
 RUN brew install parallel
