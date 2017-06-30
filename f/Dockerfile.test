@@ -1,10 +1,4 @@
 FROM tmozgacheva/orca-f
-
-
-	WORKDIR /app
-
-
-	ADD test.sh /app/test.sh
-
-
-	CMD ["bash", "test.sh"]
+WORKDIR /app
+ADD test.sh /app/test.sh
+CMD ["bash", "test.sh"]
