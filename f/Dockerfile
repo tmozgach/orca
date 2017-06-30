@@ -1,4 +1,4 @@
-FROM tmozgacheva/orca-a
+FROM tmozgacheva/orca-e
 RUN brew install sailfish \
 salmon \
 sambamba \
