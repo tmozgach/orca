@@ -10,7 +10,7 @@
 </head>
 <body style="background-color:white;">
 <div id="htmlwidget_container">
-<div id="htmlwidget-20013fabfd47fe05c22a" class="datatables html-widget" style="width:960px;height:500px;">
+<div id="htmlwidget-20013fabfd47fe05c22a" class="datatables html-widget" style="width:960px;height:960px;">
 
 </div>
 </div>
