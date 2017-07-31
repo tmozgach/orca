@@ -7,4 +7,5 @@ if brew test $(brew list) --cc=gcc-4.8 |& grep -q ': failed'; then
   exit 1
 else
   brew tests
+  brew linkage --test $(brew list)
 fi
