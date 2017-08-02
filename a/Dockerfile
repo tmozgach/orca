@@ -20,9 +20,9 @@ RUN brew install numpy # for cerulean
 RUN pip3 install biopython
 
 RUN brew install libxml2
-RUN pip3 install python-igraph
-RUN pip3 install pysam
-RUN pip3 install htseq pandas pyvcf virtualenv
+RUN pip2 install python-igraph
+RUN pip2 install pysam
+RUN pip2 install htseq pandas pyvcf virtualenv
 
 RUN brew install tcsh
 
