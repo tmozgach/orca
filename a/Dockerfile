@@ -17,7 +17,7 @@ RUN cpanm -i -f Bio::Perl
 RUN brew install python # for pip and setuptools
 RUN brew install python3
 RUN brew install numpy # for cerulean
-RUN pip3 install biopython
+RUN pip2 install biopython
 
 RUN brew install libxml2
 RUN pip2 install python-igraph
