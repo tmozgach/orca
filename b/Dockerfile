@@ -58,7 +58,7 @@ beetl \
 bfc \
 bioawk \
 biobloomtools \
-biointerchange \
+# biointerchange \ because the license and linkage problem
 biomake \
 bison \
 # biopieces \ for future, export variables
