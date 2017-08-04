@@ -1,7 +1,6 @@
 FROM tmozgacheva/orca-a
 
 RUN brew install R
-RUN sudo apt-get install csh
 RUN sudo apt-get install zip -y
 RUN brew install unzip
 RUN brew install vim
