@@ -23,7 +23,7 @@ RUN brew install libxml2
 RUN pip2 install python-igraph
 RUN pip2 install pysam
 RUN pip2 install htseq pandas pyvcf virtualenv
-
+RUN ln --symbolic --force /home/linuxbrew/.linuxbrew/bin/python2 /home/linuxbrew/.linuxbrew/bin/python
 RUN brew install tcsh
 
 RUN brew install homebrew/science/matplotlib
