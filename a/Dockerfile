@@ -8,11 +8,11 @@ RUN brew install ruby
 
 RUN gem install gnuplot RubyInline terminal-table narray
 
-RUN cpanm -i -f DBD::mysql DB_File forks Perl::Unsafe::Signals Bio::Root::Version IO::All forks::shared Want Bit::Vector DBD::SQLite DBI File::Which IO::Prompt Inline::C PerlIO::gzip XML::Simple
+RUN cpanm -i DBD::mysql DB_File forks Perl::Unsafe::Signals Bio::Root::Version IO::All forks::shared Want Bit::Vector DBD::SQLite DBI File::Which IO::Prompt Inline::C PerlIO::gzip XML::Simple
 RUN cpanm -i Module::Build Class::Inspector SOAP::Lite SVG Term::ReadKey Time::HiRes XML::Parser Carp::Clan HTML::Parser LWP URI Inline Inline::C Parse::RecDescent version
 # for bowtie
 RUN cpanm -i Unix::Processors
-RUN cpanm -i -f Bio::Perl
+RUN cpanm -i Bio::Perl
 
 RUN brew install python # for pip and setuptools
 RUN ln -s python2 /home/linuxbrew/.linuxbrew/bin/python
