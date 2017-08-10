@@ -15,6 +15,7 @@ RUN cpanm -i Unix::Processors
 RUN cpanm -i -f Bio::Perl
 
 RUN brew install python # for pip and setuptools
+RUN ln -s python2 /home/linuxbrew/.linuxbrew/bin/python
 RUN brew install python3
 RUN brew install numpy # for cerulean
 RUN pip2 install biopython
@@ -23,7 +24,6 @@ RUN brew install libxml2
 RUN pip2 install python-igraph
 RUN pip2 install pysam
 RUN pip2 install htseq pandas pyvcf virtualenv
-RUN ln --symbolic --force /home/linuxbrew/.linuxbrew/bin/python2 /home/linuxbrew/.linuxbrew/bin/python
 RUN brew install tcsh
 
 RUN brew install homebrew/science/matplotlib
