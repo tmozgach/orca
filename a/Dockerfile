@@ -10,7 +10,7 @@ ARG TERM=linux
 ARG DEBIAN_FRONTEND=noninteractive
 
 # Update the repository sources list
-RUN apt-get update
+RUN sudo apt-get update
 
 # Install compiler and perl stuff
 RUN sudo apt-get install --yes \
