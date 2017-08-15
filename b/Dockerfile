@@ -3,7 +3,6 @@ FROM tmozgacheva/orca-a
 RUN brew install R
 RUN sudo apt-get install zip -y
 RUN brew install unzip
-RUN brew install vim
 
 RUN brew tap homebrew/science
 
