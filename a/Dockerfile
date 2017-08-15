@@ -116,7 +116,8 @@ RUN cpanm -i Bio::Perl
 RUN cpanm \
   Bio::ASN1::EntrezGene
   
-RUN brew install gcc zlib berkeley-db mysql
+RUN brew install gcc zlib berkeley-db 
+#mysql
 
 RUN brew install ruby
 
