@@ -29,7 +29,7 @@ afra \
 #allpaths-lg \ old, used discovardenovo
 amos \
 andi \
-anvio
+anvio \
 arcs \
 art \
 artemis \
