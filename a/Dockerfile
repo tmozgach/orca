@@ -5,9 +5,6 @@ LABEL maintainer="tatyana.mozgacheva@gmail.com"
 ENV PERL5LIB /home/linuxbrew/perl5/lib/perl5
 
 # BUILD BioPerl dependencies and prerequisites
-# Prevent error messages from debconf about non-interactive frontend
-ARG TERM=linux
-ARG DEBIAN_FRONTEND=noninteractive
 
 # Update the repository sources list
 RUN sudo apt-get update
