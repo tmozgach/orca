@@ -24,8 +24,7 @@ RUN sudo apt-get install --yes \
 # Install perl modules 
 RUN sudo apt-get install --yes cpanminus
 
-RUN cpanm \
-  CPAN::Meta \
+RUN cpanm -i CPAN::Meta \
   YAML \
   Digest::SHA \
   Module::Build \
@@ -39,8 +38,7 @@ RUN sudo apt-get install --yes \
   openssl \
   libssl-dev
 
-RUN cpanm \
-  IO::Socket::INET6 \
+RUN cpanm -i IO::Socket::INET6 \
   LWP \
   LWP::Protocol::https
 
@@ -52,8 +50,7 @@ RUN sudo apt-get install --yes \
   libxslt1-dev \
   libgdbm-dev
 
-RUN cpanm \
-  XML::Parser \
+RUN cpanm -i XML::Parser \
   XML::Parser::PerlSAX \
   XML::DOM \
   XML::DOM::XPath \
@@ -66,8 +63,7 @@ RUN cpanm \
   XML::LibXSLT
 
 # Install what counts as BioPerl dependencies
-RUN cpanm \
-  HTML::TableExtract \
+RUN cpanm -i HTML::TableExtract \
   Algorithm::Munkres \
   Array::Compare \
   Convert::Binary::C \
@@ -91,27 +87,23 @@ RUN sudo apt-get install --yes \
   libdbd-pg-perl \
   libdbd-sqlite3-perl
 
-RUN cpanm \
-  DB_File
+RUN cpanm -i DB_File
 
 # Install GD and other graphics dependencies
 RUN sudo apt-get install --yes \
  libgd2-xpm-dev
 
-RUN cpanm \
-  GD \
+RUN cpanm -i GD \
   SVG \
   SVG::Graph
   
-RUN cpanm \
-  Bio::Phylo
+RUN cpanm -i Bio::Phylo
 
 #build BioPerl 
 RUN cpanm -i Bio::Perl
 
 #build BioPerl dependencies and prerequisites
-RUN cpanm \
-  Bio::ASN1::EntrezGene
+RUN cpanm -i Bio::ASN1::EntrezGene
   
 RUN brew install gcc zlib berkeley-db 
 #mysql
