@@ -32,8 +32,8 @@ RUN brew install e-mem \
 edirect \
 emacs \
 # RUN brew install ensembl-tools no formulae
-exonerate 
-# express
+exonerate \
+express
 
 RUN brew install fasta \
 fastml \
