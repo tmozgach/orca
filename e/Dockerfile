@@ -23,7 +23,7 @@ RUN brew install pixman
 # RUN brew install platanus no formulae
 RUN brew install plink
 RUN brew install pkg-config
-# RUN brew install plink2
+RUN brew install plink2
 RUN brew install poa
 # RUN brew install populations
 # RUN brew install poretools
