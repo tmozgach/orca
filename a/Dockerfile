@@ -2,7 +2,8 @@ FROM linuxbrew/linuxbrew:latest
 LABEL maintainer="tatyana.mozgacheva@gmail.com"
 #https://github.com/bcgsc/orca/issues/2
 ENV PERL5LIB /home/linuxbrew/perl5/lib/perl5
-RUN brew install perl cpanm gcc zlib expat berkeley-db mysql
+RUN brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/e879f488e31a65eafcccd7ce031dff115da22000/Formula/perl.rb
+RUN brew install cpanm gcc zlib expat berkeley-db mysql
 
 RUN brew install ruby
 
