@@ -1,21 +1,5 @@
 FROM tmozgacheva/orca-a
 
-RUN brew install R
-RUN sudo apt-get install zip -y
-RUN brew install unzip
-
-RUN brew tap homebrew/science
-
-RUN cpanm -i HTML::Entities LWP::Simple LWP::Protocol::https  Statistics::Descriptive Moo
-
-#for bowtie
-RUN cpanm -i Clone Apache::DBI
-
-#for icu4c,
-RUN sudo apt-get install wamerican
-
-RUN brew install miller
-
 RUN brew install \ 
 a5 \
 abacas \
