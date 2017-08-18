@@ -20,7 +20,7 @@ cufflinks \
 cytoscape
 RUN brew install daligner \
 dazz_db \
-# RUN brew install delly
+delly \
 dextractor \
 diamond \
 dida \
