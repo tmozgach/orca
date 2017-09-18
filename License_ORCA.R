@@ -91,9 +91,12 @@ tibt2 <- as_data_frame(setNames(list(formulae2,vectorr), c("Formula","Type")))
 # Combine
 full_join <- full_join(tibt2, tibt, by = "Formula")
 
-full_join$Type.x[full_join$Type.x=="NULL"] <- ''
-full_join$Type.y[full_join$Type.y=="NULL"] <- ''
+full_join$Type.x[full_join$Type.x=="NULL"] <- 'no git page'
+full_join$Type.y[full_join$Type.y=="NULL"] <- 'no git page'
 unite(full_join, new, full_join$Type.x:full_join$Type.y, sep='')
 
-full_join$comb <- with(full_join, ifelse (full_join$Type.x == '',full_join$Type.y, full_join$Type.x))
+full_join$comb <- with(full_join, ifelse (full_join$Type.x == 'no git page',full_join$Type.y, full_join$Type.x))
+
+
+pareto.chart(table(c(unlist((full_join$comb)))), main = "ORCA licenses",col=topo.colors(6))
 
