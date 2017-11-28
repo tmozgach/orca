@@ -1,4 +1,4 @@
 FROM linuxbrew/linuxbrew 
-USER root
 RUN brew intall nano
+USER root
 RUN chmod -R 777 /home/linuxbrew/.linuxbrew
