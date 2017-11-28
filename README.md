@@ -9,3 +9,8 @@ ORCA is a platform for bioinformatics analysis. It is suited for those wishing t
 snap-aligner: it is not popular and conflicts with a `snap`
 
 analysis: it is not popular and conflicts with a `biopieces`
+
+
+sudo singularity build linuxbrewt3.simg docker://tmozgacheva/orca-a
+singularity image.create --size 3000 overlay.simg
+singularity shell --overlay overlay.simg linuxbrewt3.simg
