@@ -1,13 +1,3 @@
-FROM ubuntu:xenial 
-LABEL maintainer="Shaun Jackman <sjackman@gmail.com>"
-RUN apt-get update \
-	&& apt-get install -y bzip2 curl file g++ git locales make sudo uuid-runtime
-RUN localedef -i en_US -f UTF-8 en_US.UTF-8 
-
-ADD . /home/linuxbrew/.linuxbrew/Homebrew
-RUN mkdir /home/linuxbrew/.linuxbrew/bin \
-	&& ln -s ../Homebrew/bin/brew /home/linuxbrew/.linuxbrew/bin/ \
-	&& cd /home/linuxbrew/.linuxbrew/Homebrew \
-	&& git remote set-url origin https://github.com/Linuxbrew/brew.git
-ENV PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH \ SHELL=/bin/bash 
-RUN chmod -R 777 /home/linuxbrew/.linuxbrew 
+ROM linuxbrew/linuxbrew 
+USER root
+RUN chmod -R 777 /home/linuxbrew/.linuxbrew
